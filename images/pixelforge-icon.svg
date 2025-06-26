@@ -1,0 +1,85 @@
+<svg width="256" height="256" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="256" height="256" fill="#ffffff" rx="32"/>
+  
+  <!-- グラデーション定義 -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- ピクセル用の各色 -->
+    <linearGradient id="pixel1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B6B;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ee5555;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pixel2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#4ECDC4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3dbdb4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pixel3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#45B7D1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#35a7c1;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pixel4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#96CEB4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#86bea4;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="pixel5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#DDA0DD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cd90cd;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- シャドウ -->
+    <filter id="pixelShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- 内側の背景 -->
+  <rect x="32" y="32" width="192" height="192" fill="url(#bgGradient)" rx="16"/>
+  
+  <!-- 5x5 ピクセルグリッド -->
+  <g filter="url(#pixelShadow)">
+    <!-- 1行目 -->
+    <rect x="48" y="48" width="32" height="32" fill="url(#pixel1)" rx="4"/>
+    <rect x="88" y="48" width="32" height="32" fill="url(#pixel2)" rx="4"/>
+    <rect x="128" y="48" width="32" height="32" fill="url(#pixel3)" rx="4"/>
+    <rect x="168" y="48" width="32" height="32" fill="url(#pixel4)" rx="4"/>
+    
+    <!-- 2行目 -->
+    <rect x="48" y="88" width="32" height="32" fill="url(#pixel5)" rx="4"/>
+    <rect x="88" y="88" width="32" height="32" fill="url(#pixel1)" rx="4"/>
+    <rect x="128" y="88" width="32" height="32" fill="url(#pixel2)" rx="4"/>
+    <rect x="168" y="88" width="32" height="32" fill="url(#pixel3)" rx="4"/>
+    
+    <!-- 3行目 -->
+    <rect x="48" y="128" width="32" height="32" fill="url(#pixel4)" rx="4"/>
+    <rect x="88" y="128" width="32" height="32" fill="url(#pixel5)" rx="4"/>
+    <rect x="128" y="128" width="32" height="32" fill="url(#pixel1)" rx="4"/>
+    <rect x="168" y="128" width="32" height="32" fill="url(#pixel2)" rx="4"/>
+    
+    <!-- 4行目 -->
+    <rect x="48" y="168" width="32" height="32" fill="url(#pixel3)" rx="4"/>
+    <rect x="88" y="168" width="32" height="32" fill="url(#pixel4)" rx="4"/>
+    <rect x="128" y="168" width="32" height="32" fill="url(#pixel5)" rx="4"/>
+    <rect x="168" y="168" width="32" height="32" fill="url(#pixel1)" rx="4"/>
+  </g>
+  
+  <!-- 中央のハイライト（フォージ感を演出） -->
+  <circle cx="128" cy="128" r="24" fill="none" stroke="#ffffff" stroke-width="4" opacity="0.8"/>
+  <circle cx="128" cy="128" r="12" fill="#ffffff" opacity="0.9"/>
+</svg>
